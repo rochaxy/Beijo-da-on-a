@@ -18,7 +18,7 @@ function db(): PDO
         $pdo = new PDO(
             "mysql:host=$host;port=$port;dbname=$name;charset=utf8mb4",
             env_value("DB_USER"),
-            env_value("DB_PASS"),
+            env_value("DB_PASS", ""),
             [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
