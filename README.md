@@ -1,6 +1,6 @@
 # Beijo da Onça — e-commerce PHP e MySQL
 
-MVP completo de loja de bebidas artesanais, cachaças, licores e kits. Projeto acadêmico demonstrativo inspirado na identidade solicitada, sem afiliação oficial. Catálogo, preços e ilustração são fictícios. Pagamentos são simulados e confirmados imediatamente; não há cobrança, envio de cartão, cálculo de frete ou entrega real.
+MVP completo de loja de bebidas artesanais, cachaças, licores e kits. Projeto acadêmico demonstrativo inspirado na identidade solicitada, sem afiliação oficial. Os oito itens e seus preços reproduzem as capturas fornecidas. As fotos da vitrine são cópias locais das imagens de produto de https://beijodaonca.com/. Os estoques são dados de teste. Pagamentos são simulados e confirmados imediatamente; não há cobrança, envio de cartão, cálculo de frete ou entrega real.
 
 ## Stack e requisitos
 
@@ -42,6 +42,7 @@ beijo-da-onca/
 │   ├── assets/
 │   │   ├── style.css
 │   │   ├── app.js
+│   │   ├── catalogo/ (oito fotos dos produtos)
 │   │   └── garrafa.svg
 │   └── admin/
 │       ├── index.php
@@ -77,7 +78,7 @@ As duas senhas estão no seed como hashes Bcrypt válidos, gerados com custo 12.
 
 ## Fluxos e segurança
 
-- Vitrine com produtos ativos, filtro de categoria, busca por nome/descrição e detalhes com disponibilidade. O produto Prata Origem começa sem estoque para testar o bloqueio.
+- Vitrine com produtos ativos, filtro de categoria, busca por nome/descrição e detalhes com disponibilidade. A Tábua começa sem estoque para testar o bloqueio.
 - Carrinho em `$_SESSION`: adição cumulativa, atualização validada contra estoque, remoção, limpeza e totais calculados no servidor. Itens inativos ou com estoque alterado são indicados e impedidos no checkout.
 - Cadastro e login usam Bcrypt e `password_verify`. Regeneração do ID da sessão ao entrar/sair, cookie HttpOnly/SameSite e proteção CSRF em todas as ações POST. Logout exclusivamente por POST. Login tem limite básico de tentativas por sessão; um ambiente público deve usar limitação por conta/IP na infraestrutura.
 - RBAC consulta o perfil atual no banco e exige usuário autenticado para checkout e pedidos pessoais. O cliente só consulta pedidos próprios.
@@ -120,3 +121,7 @@ As duas senhas estão no seed como hashes Bcrypt válidos, gerados com custo 12.
 10. `test: registrar validações de segurança e compra`
 
 Antes de cada commit, revise `git status` e confirme que `.env` está ignorado. Para verificar sintaxe: `php -l caminho/do/arquivo.php`. Faça backup do banco antes de migrações. A passagem para operação comercial exige gateway real, política de entrega, recuperação de conta, controles de acesso operacionais e revisão jurídica da venda de bebidas; esses serviços não fazem parte do MVP solicitado.
+
+## Entrega da atividade
+
+Submeta o link do repositório GitHub ou GitLab contendo o histórico de desenvolvimento. O ZIP é uma cópia pessoal. A atividade não o aceita como entrega oficial do e-commerce.

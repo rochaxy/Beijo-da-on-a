@@ -18,7 +18,7 @@ require dirname(__DIR__) . "/includes/header.php";
     image_url($product["imagem"]),
 ) ?>" alt="<?= e(
     $product["nome"],
-) ?> — imagem ilustrativa" width="600" height="650"></div><div class="col-md-6"><p class="eyebrow text-amber"><?= e(
+) ?>" width="600" height="650"></div><div class="col-md-6"><p class="eyebrow text-amber"><?= e(
      $product["categoria"],
  ) ?></p><h1><?= e(
     $product["nome"],
@@ -35,5 +35,5 @@ require dirname(__DIR__) . "/includes/header.php";
     "id"
 ] ?>"><div><label class="form-label" for="quantity">Quantidade</label><input id="quantity" class="form-control quantity" type="number" name="quantidade" value="1" min="1" max="<?= (int) $product[
     "estoque"
-] ?>" required></div><button class="btn btn-amber" type="submit">Adicionar à sacola</button></form><?php endif; ?><p class="small text-muted mt-4">Venda exclusiva para maiores de 18 anos. Imagem ilustrativa.</p></div></div></section>
+] ?>" required></div><button class="btn btn-amber" type="submit">Adicionar à sacola</button></form><?php endif; ?><p class="small text-muted mt-4">Venda exclusiva para maiores de 18 anos.</p></div></div></section>
 <?php require dirname(__DIR__) . "/includes/footer.php"; ?>

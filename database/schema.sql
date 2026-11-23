@@ -63,14 +63,14 @@ INSERT INTO usuarios (nome,email,senha,perfil) VALUES
 ('Administrador','admin@beijodaonca.com','$2y$12$UxLG/Dg.sHsoxmfN6RuLz.PsZdINg.6tG/sb63F/lHUzQbNwH4UBW','admin'),
 ('Cliente de Teste','cliente@example.com','$2y$12$XPKlFhMEv69RN9K1fRB0q.BysSvVVBBnIs/8Xka6U2NFuK35Yno0K','cliente');
 INSERT INTO categorias (nome) VALUES
-('Cachaças Envelhecidas'),('Cachaças Clássicas / Prata'),('Licores & Especiarias'),('Kits & Presentes');
--- Linha demonstrativa inspirada no nicho da marca; preços e descrições fictícios.
-INSERT INTO produtos (categoria_id,nome,resumo,descricao,preco,estoque) VALUES
-(1,'Reserva Carvalho 700 ml','Notas de baunilha, madeira e final persistente.','Cachaça artesanal de perfil amadeirado. O carvalho inspira aromas de baunilha e especiarias, corpo macio e final prolongado. Sugestão de degustação: pequenas doses, em temperatura ambiente. Conteúdo: 700 ml. Catálogo demonstrativo.',89.90,18),
-(1,'Seleção Amburana 700 ml','Aromas adocicados e delicado toque de especiarias.','Perfil sensorial inspirado na amburana brasileira: notas aromáticas doces e especiarias suaves, com textura aveludada. Sugestão: apreciar lentamente. Conteúdo: 700 ml. Produto demonstrativo.',79.90,12),
-(1,'Blend de Madeiras 700 ml','Equilíbrio entre intensidade e suavidade.','Uma proposta de blend com notas de madeira, especiarias e final equilibrado. Ideal para conhecer diferentes expressões da cachaça artesanal. Conteúdo: 700 ml. Produto demonstrativo.',109.90,6),
-(2,'Prata da Casa 700 ml','Frescor da cana e versatilidade para coquetéis.','Cachaça de aparência cristalina, com notas frescas de cana e perfil direto. Uma proposta para caipirinhas e coquetéis brasileiros. Conteúdo: 700 ml. Produto demonstrativo.',49.90,30),
-(2,'Prata Origem 1 L','Expressão clássica da tradição brasileira.','Perfil leve e fresco, pensado para encontros e preparo de coquetéis. Notas vegetais e de cana, com final limpo. Conteúdo: 1 litro. Produto demonstrativo.',64.90,0),
-(3,'Licor de Jabuticaba 500 ml','Fruta brasileira com dulçor equilibrado.','Licor de perfil frutado, inspirado na jabuticaba, com aroma intenso e textura envolvente. Sugestão: servir gelado em pequenas doses ou em coquetéis. Conteúdo: 500 ml. Produto demonstrativo.',59.90,15),
-(3,'Licor de Mel e Especiarias 500 ml','Aconchego aromático e final delicado.','Proposta de licor com notas de mel e especiarias, aroma acolhedor e dulçor persistente. Sugestão: servir gelado. Conteúdo: 500 ml. Produto demonstrativo.',62.90,9),
-(4,'Kit Presente Raízes','Uma seleção para brindar e presentear.','Kit demonstrativo com uma cachaça artesanal de 700 ml e dois copos de degustação em embalagem para presente. A proposta reúne identidade brasileira e apresentação rústica. Imagem ilustrativa.',149.90,5);
+('Cachaças de Madeira'),('Cachaças Clássicas'),('Kits & Presentes'),('Acessórios');
+-- Preços das capturas fornecidas. Estoques de teste para a avaliação do CRUD e do checkout.
+INSERT INTO produtos (categoria_id,nome,resumo,descricao,preco,estoque,imagem) VALUES
+(3,'Kit Carvalho e Amburana','Garrafa de 750 ml com taça ISO e caixa.','Acompanha uma garrafa Carvalho & Amburana de 750 ml, uma taça ISO personalizada e uma caixa para presente.',269.00,5,'assets/catalogo/kit-carvalho.webp'),
+(1,'Carvalho & Amburana','Cachaça de alambique, 750 ml.','A cachaça Carvalho & Amburana tem perfil intenso. A garrafa de 750 ml traz graduação alcoólica de 40% vol. no rótulo.',249.00,12,'assets/catalogo/carvalho-amburana.png'),
+(3,'Kit Clássica','Garrafa de 750 ml com taça ISO e caixa.','O kit reúne a garrafa Beijo da Onça Clássica de 750 ml, uma taça ISO personalizada e a caixa para presente.',169.00,6,'assets/catalogo/kit-classica.webp'),
+(2,'Beijo da Onça Clássica','Cachaça leve, sem filtro, 750 ml.','A marca descreve a Clássica como direta, leve e sem filtro. A garrafa de 750 ml traz graduação alcoólica de 38% vol. no rótulo.',149.00,30,'assets/catalogo/classica.png'),
+(4,'Tábua','Tábua da linha Premium Beijo da Onça.','Tábua de madeira da linha Premium com a marca Beijo da Onça gravada na superfície.',119.00,0,'assets/catalogo/tabua.png'),
+(4,'Taça','Taça personalizada Beijo da Onça.','Taça transparente com haste e o logotipo da marca em dourado.',59.90,15,'assets/catalogo/taca.png'),
+(4,'Copo duplo shot','Copo alto da linha Beijo da Onça.','Copo de vidro transparente, de formato alongado, com o símbolo da onça em verde e amarelo.',24.90,9,'assets/catalogo/copo-duplo-shot.png'),
+(4,'Copo de shot','Copo de dose da linha Beijo da Onça.','Copo baixo de vidro transparente, com base espessa e símbolo da onça em amarelo.',14.90,18,'assets/catalogo/copo-de-shot.png');

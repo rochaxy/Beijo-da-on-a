@@ -19,7 +19,7 @@ if ($category) {
 $products = sql($query . " ORDER BY p.id", $params)->fetchAll();
 require dirname(__DIR__) . "/includes/header.php";
 ?>
-<section class="store-hero"><div class="container"><div class="row align-items-center g-4"><div class="col-md-7"><p class="eyebrow">DA NOSSA TERRA, PARA O SEU BRINDE</p><h1>O tempo apura.<br>A origem encanta.</h1><p class="hero-copy">Cachaças artesanais, licores e encontros que merecem ser celebrados. Descubra os sabores da nossa coleção.</p><a href="#catalogo" class="btn btn-amber mt-3">Explore os sabores ↗</a></div><div class="col-md-5"><img class="hero-bottle" src="<?= e(
+<section class="store-hero"><div class="container"><div class="row align-items-center g-4"><div class="col-md-7"><p class="eyebrow">DA NOSSA TERRA, PARA O SEU BRINDE</p><h1>O tempo apura.<br>A origem encanta.</h1><p class="hero-copy">Cachaças artesanais, kits para presente e acessórios da Beijo da Onça. Descubra os sabores da nossa coleção.</p><a href="#catalogo" class="btn btn-amber mt-3">Explore os sabores ↗</a></div><div class="col-md-5"><img class="hero-bottle" src="<?= e(
     url("assets/garrafa.svg"),
 ) ?>" width="600" height="650" alt="Ilustração de garrafa da coleção Beijo da Onça"></div></div></div></section>
 <section id="catalogo" class="container py-5"><div class="d-flex flex-wrap justify-content-between gap-3 align-items-end mb-4"><div><p class="eyebrow text-amber">NOSSA COLEÇÃO</p><h2>Escolha seu próximo brinde.</h2></div><span class="text-muted small"><?= count(
@@ -45,7 +45,7 @@ foreach (
     image_url($product["imagem"]),
 ) ?>" class="card-img-top" width="600" height="650" alt="<?= e(
     $product["nome"],
-) ?> — imagem ilustrativa" loading="lazy"></a><div class="card-body d-flex flex-column"><p class="product-category"><?= e(
+) ?>" loading="lazy"></a><div class="card-body d-flex flex-column"><p class="product-category"><?= e(
      $product["categoria"],
  ) ?></p><h3 class="h5"><a href="<?= e(
     url("produto.php?id=" . $product["id"]),
@@ -63,5 +63,5 @@ foreach (
 if (!$products): ?><p>Nenhum produto encontrado. <a href="<?= e(
     url("index.php"),
 ) ?>">Limpar filtros</a></p><?php endif;
-?></div><p class="text-muted small mt-4">Imagens e catálogo ilustrativos para avaliação acadêmica; sem vínculo comercial oficial com a marca.</p></section>
+?></div><p class="text-muted small mt-4">Catálogo acadêmico com fotos de Beijo da Onça. Estoque e compras simulados.</p></section>
 <?php require dirname(__DIR__) . "/includes/footer.php"; ?>
