@@ -116,3 +116,9 @@ O versionamento começou depois da implementação inicial. Os primeiros registr
 ## Entrega da atividade
 
 Submeta o link do repositório GitHub ou GitLab contendo o histórico de desenvolvimento. O ZIP é uma cópia pessoal. A atividade não o aceita como entrega oficial do e-commerce.
+
+## Verificação em XAMPP
+
+Teste realizado com a distribuição XAMPP 8.2.12 para Linux em ambiente local isolado, usando Apache 2.4.58, PHP 8.2.12 e MariaDB 10.4.32. A loja ficou na pasta `Beijo-da-on-a`, com `APP_BASE=/Beijo-da-on-a/public` e sem a variável `DB_PASS` no arquivo de teste. O Apache e o banco usaram portas locais próprias.
+
+Após importar `database/schema.sql`, a vitrine apresentou oito produtos. O administrador entrou no painel. O cliente entrou na loja e recebeu HTTP 403 ao tentar abrir o painel administrativo. A compra simulada de duas unidades do Kit Carvalho e Amburana por PIX gerou o pedido nº 1 no banco de teste. Cada unidade custou R$ 269,00, o total foi R$ 538,00 e o estoque passou de 5 para 3. A sacola ficou vazia e o administrador conseguiu consultar os itens do pedido.
