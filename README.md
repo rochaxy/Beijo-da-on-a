@@ -55,6 +55,8 @@ beijo-da-onca/
 
 1. Inicie Apache e MySQL no painel do XAMPP.
 2. Copie `beijo-da-onca` para `C:\xampp\htdocs\beijo-da-onca` (ou a pasta htdocs do seu sistema).
+   Ao clonar pelo GitHub, a pasta costuma se chamar `Beijo-da-on-a`. Renomeie-a para `beijo-da-onca` dentro de `htdocs` para seguir os endereços deste guia. Se preferir manter o nome do clone, use `APP_BASE=/Beijo-da-on-a/public` no arquivo `.env` e abra `http://localhost/Beijo-da-on-a/public/`.
+
 3. Em `http://localhost/phpmyadmin`, importe **uma única vez** `database/schema.sql`. Ele cria `beijo_da_onca_db`, cinco tabelas com relacionamentos, dois usuários, quatro categorias e oito produtos. Não apaga dados existentes; uma reimportação encontrará tabelas existentes. Use um banco limpo para avaliação.
 4. Crie um usuário MySQL exclusivo para a aplicação. Conceda somente `SELECT`, `INSERT`, `UPDATE`, `DELETE` sobre `beijo_da_onca_db.*` após a importação. Credenciais administrativas do MySQL ficam fora da aplicação.
 5. Copie `.env.example` para `.env` na raiz do projeto. No Windows, habilite a visualização de extensões para não criar `.env.txt`.
@@ -107,20 +109,9 @@ As duas senhas estão no seed como hashes Bcrypt válidos, gerados com custo 12.
 
 `usuarios 1:N pedidos`; `categorias 1:N produtos`; `pedidos N:N produtos` resolvido por `itens_pedido`. A tabela associativa guarda quantidade, nome e preço unitário da compra. Os índices atendem categorias, status/nome, cliente/data e itens por produto. As restrições de banco complementam a validação PHP.
 
-## Roteiro sugerido de commits
+## Histórico de desenvolvimento
 
-1. `chore: estrutura PHP e ambiente sem credenciais`
-2. `feat: schema normalizado e seed demonstrativo`
-3. `feat: vitrine busca e detalhes de produtos`
-4. `feat: carrinho em sessão com validação de estoque`
-5. `feat: cadastro login e controle de perfis`
-6. `feat: checkout transacional e histórico de pedidos`
-7. `feat: administração de produtos e pedidos`
-8. `style: identidade responsiva Beijo da Onça`
-9. `docs: instalação XAMPP e roteiro de avaliação`
-10. `test: registrar validações de segurança e compra`
-
-Antes de cada commit, revise `git status` e confirme que `.env` está ignorado. Para verificar sintaxe: `php -l caminho/do/arquivo.php`. Faça backup do banco antes de migrações. A passagem para operação comercial exige gateway real, política de entrega, recuperação de conta, controles de acesso operacionais e revisão jurídica da venda de bebidas; esses serviços não fazem parte do MVP solicitado.
+O versionamento começou depois da implementação inicial. Os primeiros registros de código preservam duas versões disponíveis naquele momento: a loja funcional e a atualização do catálogo. As revisões posteriores são registradas conforme são feitas.
 
 ## Entrega da atividade
 
