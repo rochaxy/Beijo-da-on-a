@@ -1,0 +1,5 @@
+# Defesa adicional quando o projeto inteiro estiver em htdocs.
+Options -Indexes
+<FilesMatch "^(\.|README|.*\.(sql|log|bak|ini)$)">
+  Require all denied
+</FilesMatch>
